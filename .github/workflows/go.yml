@@ -38,5 +38,5 @@ jobs:
         - name: Test and Build
           run: |
             mkdir build
-            go test -count=1 -p=1 -v ./... -coverprofile build/coverage.out -coverpkg=./...
+            go test -count=1 -p=1 -v ./... -coverprofile build/coverage.out
             go tool cover -func=build/coverage.out
