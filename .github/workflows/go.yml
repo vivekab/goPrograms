@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+    build:
+        name: Build and Test
+        runs-on: ubuntu:latest
+        steps:
+        - name: Set up Go 1.x
+          uses: actions/setup-go@v2
+          with:
+            go-version: ^1.14
+          id: go
+
+        - name: Check out code
+          uses: actions/checkout@v2
+
+        - name: Get dependencies
+          run: |
+            git config --global http.sslVerify false
+            go get -v -t -d ./...
+            if [ -f Gopkg.toml ]; then
+                curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+                dep ensure
+            fi
+
+        - name: Test and Build
+          run: |
+            mkdir build
+            go test -count=1 -p=1 ./... -v -coverprofile build/coverage.out -coverpkg=./...
+            go tool cover -func=build/coverage.out
