@@ -1,4 +1,4 @@
-package main
+package linearSearch
 
 import "testing"
 
@@ -31,8 +31,8 @@ func Test_linearSearch(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := linearSearch(tt.args.slice, tt.args.element); got != tt.want {
-				t.Errorf("linearSearch() = %v, want %v", got, tt.want)
+			if got := LinearSearch(tt.args.slice, tt.args.element); got != tt.want {
+				t.Errorf("LinearSearch() = %v, want %v", got, tt.want)
 			}
 		})
 	}

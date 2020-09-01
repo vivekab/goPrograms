@@ -1,6 +1,6 @@
 package binarySearch
 
-func binarySearch(slice []int, element int) int {
+func BinarySearch(slice []int, element int) int {
 	low := 0
 	high := len(slice) - 1
 
