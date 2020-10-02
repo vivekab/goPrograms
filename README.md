@@ -23,7 +23,7 @@ A variety of websites have been considered in the implementation of these mentio
 - [ ] Selection Sort
 - [ ] Insertion Sort
 
-#Contributing Guidelines
+# Contributing Guidelines
 Please refer to each project's style and contribution guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
 
     1.Fork the repo on GitHub
