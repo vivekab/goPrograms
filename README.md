@@ -23,6 +23,9 @@ A variety of websites have been considered in the implementation of these mentio
 - [ ] Selection Sort
 - [ ] Insertion Sort
 
+### Leetcode Problems Solved:
+- [x] Candy Problem
+
 # Contributing Guidelines
 Please refer to each project's style and contribution guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
 
